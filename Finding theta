@@ -1,0 +1,18 @@
+function theta= rotatedtheta(R)
+% R is the rotation matrix belong to SO(3)
+% it is importatnt to check whether the R is identity matrix
+% and the trace of R is -1
+% if non of them satisfies then the theta is found using the formula
+I=[1 0 0; 0 1 0; 0 0 1]
+R=[2 0 1; 1 0 2 ; 1 1 0]
+trace=R(1,1)+R(2,2)+R(3,3)
+if I== R
+    fprintf('theta is 0')
+    else if  trace==-1
+        fprintf('theta is pi degrees')
+    else
+     theta= acos((trace-1)/2)
+     
+    end
+end
+% the that we got is equal to 1.0472rad
